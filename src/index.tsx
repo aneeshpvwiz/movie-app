@@ -1,14 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { StoreProvider } from "./store";
+import { JsxEmit } from "typescript";
 
+const RouterPage = (props: { component: JSX.Element }) => props;
 ReactDOM.render(
-  <React.StrictMode>
+  <StoreProvider>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    :JSX.Element
+  </StoreProvider>,
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
